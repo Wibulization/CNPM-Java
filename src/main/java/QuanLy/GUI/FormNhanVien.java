@@ -132,7 +132,7 @@ public class FormNhanVien extends javax.swing.JPanel {
 
         cmbGioiTinh.setEditable(true);
         cmbGioiTinh.setFont(new java.awt.Font("Roboto", 1, 15)); // NOI18N
-        cmbGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chọn giới tình", "Nam", "Nữ" }));
+        cmbGioiTinh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chọn giới tính", "Nam", "Nữ" }));
 
         txtChucVu.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
 
