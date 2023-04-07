@@ -72,12 +72,18 @@ public class TaiKhoanBUS {
 
     public void khoaTaiKhoan(String ma) {
         int maNV = Integer.parseInt(ma);
+        if(taiKhoanDAO.getTrangThaiAdmin(maNV).equals("Quản trị"))
+        {
+            new MyDialog("Đây là Admin! Không thể khóa tài khoản!", MyDialog.ERROR_DIALOG);
+        }
+        else{
         boolean flag = taiKhoanDAO.khoaTaiKhoan(maNV);
         if (flag) {
             new MyDialog("Khoá tài khoản thành công!", MyDialog.SUCCESS_DIALOG);
         } else {
             new MyDialog("Khoá tài khoản thất bại!", MyDialog.ERROR_DIALOG);
         }
+    }
     }
 
     public void moKhoaTaiKhoan(String ma) {

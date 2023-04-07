@@ -139,4 +139,16 @@ public class TaiKhoanDAO {
         }
         return -1;
     }
+    public String getTrangThaiAdmin(int ma) {
+        try {
+            String sql = "SELECT Quyen FROM TaiKhoan WHERE MaNV=" + ma;
+            Statement st = MyConnect.conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                return rs.getString(1);
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
 }

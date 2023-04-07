@@ -165,6 +165,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon(".\\image\\add.png"));
 
         javax.swing.GroupLayout pnThemNVLayout = new javax.swing.GroupLayout(pnThemNV);
         pnThemNV.setLayout(pnThemNVLayout);
@@ -202,6 +203,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setIcon(new javax.swing.ImageIcon(".\\image\\edit.png"));
 
         javax.swing.GroupLayout pnSuaNVLayout = new javax.swing.GroupLayout(pnSuaNV);
         pnSuaNV.setLayout(pnSuaNVLayout);
@@ -239,6 +241,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(".\\image\\delete.png"));
 
         javax.swing.GroupLayout pnXoaNVLayout = new javax.swing.GroupLayout(pnXoaNV);
         pnXoaNV.setLayout(pnXoaNVLayout);
@@ -270,6 +273,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         pnTimNV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnTimNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnTimNV.setIcon(new javax.swing.ImageIcon(".\\image\\search.png"));
 
         javax.swing.GroupLayout pnTimNVLayout = new javax.swing.GroupLayout(pnTimNV);
         pnTimNV.setLayout(pnTimNVLayout);
@@ -303,6 +307,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel54.setIcon(new javax.swing.ImageIcon(".\\image\\add-account.png"));
 
         javax.swing.GroupLayout pnCapTaiKhoanLayout = new javax.swing.GroupLayout(pnCapTaiKhoan);
         pnCapTaiKhoan.setLayout(pnCapTaiKhoanLayout);
@@ -340,6 +345,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel58.setIcon(new javax.swing.ImageIcon(".\\image\\password.png"));
 
         javax.swing.GroupLayout pnResetMatKhauLayout = new javax.swing.GroupLayout(pnResetMatKhau);
         pnResetMatKhau.setLayout(pnResetMatKhauLayout);
@@ -406,6 +412,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnKhoaTaiKhoan.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         btnKhoaTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
@@ -419,6 +426,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel59.setIcon(new javax.swing.ImageIcon(".\\image\\lock.png"));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -626,6 +634,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setIcon(new javax.swing.ImageIcon(".\\image\\edit.png"));
 
         javax.swing.GroupLayout pnSuaQuyenLayout = new javax.swing.GroupLayout(pnSuaQuyen);
         pnSuaQuyen.setLayout(pnSuaQuyenLayout);
@@ -663,6 +672,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setIcon(new javax.swing.ImageIcon(".\\image\\delete.png"));
 
         javax.swing.GroupLayout pnXoaQuyenLayout = new javax.swing.GroupLayout(pnXoaQuyen);
         pnXoaQuyen.setLayout(pnXoaQuyenLayout);
@@ -701,6 +711,7 @@ public class FormNhanVien extends javax.swing.JPanel {
         });
 
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setIcon(new javax.swing.ImageIcon(".\\image\\add.png"));
 
         javax.swing.GroupLayout bpnThemQuyenLayout = new javax.swing.GroupLayout(bpnThemQuyen);
         bpnThemQuyen.setLayout(bpnThemQuyenLayout);
@@ -1027,6 +1038,26 @@ public class FormNhanVien extends javax.swing.JPanel {
         txtTimNV.setText("");
         cmbGioiTinh.setSelectedIndex(0);
     }
+    private void xulyKhoa()
+    {
+        TaiKhoanBUS tk = new TaiKhoanBUS();
+        String maNV = txtMaNV.getText();
+        if(maNV.trim().equals(""))
+        {
+            new MyDialog("Mã nhân viên đang trống!", MyDialog.ERROR_DIALOG);
+        }
+        else if(tk.getTrangThai(maNV) == 0)
+        {
+            tk.moKhoaTaiKhoan(maNV);
+        }
+        else if(tk.getTrangThai(maNV) == -1)
+        {
+            new MyDialog("Tài khoản chưa có hiệu lực! Vui lòng cấp tài khoản", MyDialog.ERROR_DIALOG);
+            xuLyCapTaiKhoan();
+        }
+        else tk.khoaTaiKhoan(maNV);
+        loadDataTblNhanVien();
+    }
     
     private void ckbNhapHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckbNhapHangActionPerformed
         // TODO add your handling code here:
@@ -1097,6 +1128,7 @@ public class FormNhanVien extends javax.swing.JPanel {
 
     private void btnKhoaTaiKhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKhoaTaiKhoanMouseClicked
         // TODO add your handling code here:
+        xulyKhoa();
     }//GEN-LAST:event_btnKhoaTaiKhoanMouseClicked
     
     private PhanQuyenBUS phanQuyenBUS = new PhanQuyenBUS();

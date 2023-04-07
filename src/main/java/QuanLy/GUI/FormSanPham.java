@@ -174,6 +174,7 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(".\\image\\delete.png"));
 
         javax.swing.GroupLayout pnXoaLayout = new javax.swing.GroupLayout(pnXoa);
         pnXoa.setLayout(pnXoaLayout);
@@ -212,6 +213,7 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setIcon(new javax.swing.ImageIcon(".\\image\\add.png"));
 
         javax.swing.GroupLayout pnThemLayout = new javax.swing.GroupLayout(pnThem);
         pnThem.setLayout(pnThemLayout);
@@ -249,6 +251,7 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setIcon(new javax.swing.ImageIcon(".\\image\\edit.png"));
 
         javax.swing.GroupLayout pnSuaLayout = new javax.swing.GroupLayout(pnSua);
         pnSua.setLayout(pnSuaLayout);
@@ -292,6 +295,7 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setIcon(new javax.swing.ImageIcon(".\\image\\upload.png"));
 
         javax.swing.GroupLayout pnChonAnhLayout = new javax.swing.GroupLayout(pnChonAnh);
         pnChonAnh.setLayout(pnChonAnhLayout);
@@ -331,6 +335,7 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setIcon(new javax.swing.ImageIcon(".\\image\\excel.png"));
 
         javax.swing.GroupLayout pnXuatFileExcelLayout = new javax.swing.GroupLayout(pnXuatFileExcel);
         pnXuatFileExcel.setLayout(pnXuatFileExcelLayout);
@@ -362,6 +367,7 @@ public class FormSanPham extends javax.swing.JPanel {
         pnTim.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnTim.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnTim.setIcon(new javax.swing.ImageIcon(".\\image\\search.png"));
         btnTim.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnTimMouseClicked(evt);
@@ -400,6 +406,7 @@ public class FormSanPham extends javax.swing.JPanel {
         });
 
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setIcon(new javax.swing.ImageIcon(".\\image\\import-excel.png"));
 
         javax.swing.GroupLayout btnNhapExcelLayout = new javax.swing.GroupLayout(btnNhapExcel);
         btnNhapExcel.setLayout(btnNhapExcelLayout);
